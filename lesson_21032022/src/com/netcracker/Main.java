@@ -19,18 +19,17 @@ public class Main {
             public double calculateArea() {
                 return Math.pow(base,2)+ height*base*0.5;
             }
+
+            @Override
+            public String getShapeName() {
+                return "Teremok";
+            }
         };
 
+        System.out.println(triangle.getShapeName());
+        System.out.println(rectangle.getShapeName());
+        System.out.println(teremok.getShapeName());
 
-
-        System.out.println(triangle.calculateArea());
-        System.out.println(rectangle.calculateArea());
-        System.out.println(teremok.calculateArea());
-
-        System.out.println(triangle instanceof IShape);
-        System.out.println(rectangle instanceof IShape);
-        System.out.println(teremok instanceof IShape);
-        
     }
 
 

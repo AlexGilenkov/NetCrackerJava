@@ -32,4 +32,9 @@ public class Rectangle implements IShape{
     public double calculateArea() {
         return length*width;
     }
+
+    @Override
+    public String getShapeName() {
+        return "Rectangle";
+    }
 }

@@ -32,4 +32,9 @@ public class Triangle implements IShape{
     public double calculateArea() {
         return (base*height)/2;
     }
+
+    @Override
+    public String getShapeName() {
+        return "Triangle";
+    }
 }
