@@ -1,6 +1,8 @@
 package com.netcracker.person;
 
-public class Person {
+import com.netcracker.comparable.AgeCompatator;
+
+public class Person implements Comparable<Person> {
     private int age;
     private String name;
     private String passport;
@@ -71,34 +73,14 @@ public class Person {
     }
 
 
-    public static void m(int x, int y){
+    @Override
+    public int compareTo(Person o) {
+//        if(this.age == o.age)
+//            return 0;
+//        else
+//            return (this.age>o.age) ? 1 : -1;
+//
+        return  this.age - o.age;
 
     }
-
-    public static void m(int x, int y, int z){
-
-    }
-
-    public static void staticMethod(){
-        counter++;
-        anotherStaticMethod();
-        // Нельзя вызвать нестатичные методы
-        // age++;
-        // nonStaticMethod();
-
-    }
-
-    public static void anotherStaticMethod(){
-
-    }
-
-    public void nonStaticMethod(){
-        counter++;
-        age++;
-        anotherStaticMethod();
-        nonStaticMethod();
-        staticMethod();
-
-    }
-
 }
