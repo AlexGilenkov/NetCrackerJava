@@ -1,57 +1,32 @@
 package com.netcracker;
 
-import com.netcracker.comparable.AgeCompatator;
-import com.netcracker.person.Person;
+import com.netcracker.figures.Circle;
+import com.netcracker.lambda.math.Addition;
+import com.netcracker.lambda.math.MathOperation;
+import com.netcracker.lambda.math.MathOperator;
 
-import java.util.*;
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
 
-        Person p1 = new Person(35, "Ivan", "22203");
-        Person p2 = new Person(25, "Petr", "22203");
-        Person p3 = new Person(45, "Vasiliy", "22203");
+        Circle circle = new Circle(25.3, "green");
 
-        System.out.println(p1.compareTo(p2));
+        String className = "com.netcracker.figures.Circle";
 
-        List<Person> personList = new ArrayList<>();
-        personList.add(p1);
-        personList.add(p2);
-        personList.add(p3);
+        Class clazz = Class.forName(className);
 
-        System.out.println("Before sorting:");
-        personList.forEach(System.out::println);
+        Object o = clazz.getDeclaredConstructor(double.class, String.class ).newInstance(10.5, "green");
+        Object o1 = clazz.getDeclaredConstructor().newInstance();
 
-        System.out.println("==============================");
+        Circle circle1 = (Circle) o;
+        System.out.println(o);
+        System.out.println(o1);
 
 
-        //Collections.sort(personList);
-        //Collections.sort(personList, new AgeCompatator());
-        Collections.sort(personList, new Comparator<Person>() {
-            @Override
-            public int compare(Person o1, Person o2) {
-                return o1.getName().compareTo(o2.getName());
-            }
-        });
-
-
-        System.out.println("After sorting:");
-        personList.forEach(System.out::println);
-
-        System.out.println("============================");
-
-        Collections.reverse(personList);
-
-        System.out.println("After reverse:");
-        personList.forEach(System.out::println);
-    }
-
-    static void printCollection(Collection<?> collection){
-
-
-        for (Object object : collection) {
-            System.out.println(object);
-        }
 
     }
 

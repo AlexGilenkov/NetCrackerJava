@@ -1,6 +1,6 @@
 package com.netcracker.person;
 
-import com.netcracker.comparable.AgeCompatator;
+import com.netcracker.comparable.AgeComparator;
 
 public class Person implements Comparable<Person> {
     private int age;
