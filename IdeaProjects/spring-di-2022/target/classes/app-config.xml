@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="v8engine" class="com.netcracker.beans.V8"/>
+    <bean id="diesel" class="com.netcracker.beans.Diesel"/>
+
+    <!--Constructor-based injection-->
+
+<!--    <bean id="vw-tiguan" class="com.netcracker.beans.Car">-->
+<!--        <constructor-arg ref="diesel"/>-->
+<!--        <constructor-arg value="XWW3243FK24355424"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="skoda-rapid" class="com.netcracker.beans.Car">-->
+<!--        <constructor-arg ref="v8engine"/>-->
+<!--        <constructor-arg value="XWW3243KO4348355424"/>-->
+<!--    </bean>-->
+
+<!--    Setter based injection-->
+
+    <bean id="vw-tiguan" class="com.netcracker.beans.Car">
+        <property name="engine" ref="diesel"/>
+        <property name="vin" value="BBVH768V878967"/>
+    </bean>
+
+
+    <bean id="skoda-rapid" class="com.netcracker.beans.Car">
+        <property name="engine" ref="v8engine"/>
+        <property name="vin" value="BBVH768OKH71237"/>
+    </bean>
+
+</beans>
