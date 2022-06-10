@@ -1,0 +1,9 @@
+Plan for May
+1. Client-server model (servlets, Application Server)
+2. Model OSI, TCP/IP model
+3. HTTP, GET vs. POST, Submit Form
+4. HTTP Session + Cookies
+5. Spring Boot Web Application + Thymeleaf
+6. Spring overview (Configuration, Dependency Injection)
+7. JDBC, JPA, ORM, Spring Boot Data => DB
+8. REST
